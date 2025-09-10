@@ -1,0 +1,15 @@
+-d C:\Users\PABLO-LAP-LENOVO\Documents\gti programing projects\hdl\Riscv\RiscV_harris_9k_v3\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst C:\Users\PABLO-LAP-LENOVO\Documents\gti programing projects\hdl\Riscv\RiscV_harris_9k_v3\RISCV_harris_9k\src\RISC_V_harris.cst
+-cfg C:\Users\PABLO-LAP-LENOVO\Documents\gti programing projects\hdl\Riscv\RiscV_harris_9k_v3\RISCV_harris_9k\impl\pnr\device.cfg
+-sdc C:\Users\PABLO-LAP-LENOVO\Documents\gti programing projects\hdl\Riscv\RiscV_harris_9k_v3\RISCV_harris_9k\src\RISCV_harris_9k.sdc
+-gao_crc 0001001011110110
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
+-rtl_gao

@@ -1,0 +1,1321 @@
+ini:
+	addi x7,x0,1
+	lui x2 ,  0x20000  /* x1  = 1000 0x3E8 */
+
+    lui x4,0xAAAAA
+	addi x4,x4,0x04aa //x4=AAAAA4AA
+
+	sw x4,1(x2)
+
+    call delay
+
+    jal x0,ini
+    
+delay:
+		addi x5,x0,100
+tec:    sub x5, x5,x7
+    	beq x5,x0,salir
+		jal x0,tec
+salir:	ret
+00100393
+20000137
+aaaaa237
+4aa20213
+004120a3
+008000ef
+fe9ff06f
+06400293
+407282b3
+00028463
+ff9ff06f
+00008067
+
+
+//
+
+
+
+ini:
+	addi x7,x0,1
+	lui x2 ,  0x20000  /* x1  = 1000 0x3E8 */
+    lui x4,0xAAAAA
+	addi x4,x4,0x04aa
+	sw x4,1(x2)  /*envia al SPI*/
+
+	lui x2, 0x10000  /*envia a los leds */
+	sw x4,0(x2)
+    
+    call delay
+    jal x0,ini
+    
+delay:
+		addi x5,x0,100
+tec:    sub x5, x5,x7
+    	beq x5,x0,salir
+		jal x0,tec
+salir:	ret
+00100393
+20000137
+aaaaa237
+4aa20213
+004120a3
+10000137
+00412023
+008000ef
+fe1ff06f
+06400293
+407282b3
+00028463
+ff9ff06f
+00008067
+
+
+//parpa en la 0x10000000
+ini:
+	addi x7,x0,1
+
+	addi x4,x0,0x04aa
+	lui x2, 0x10000  /*envia a los leds */
+	sw x4,0(x2)  /*envia a leds*/
+    call delay
+	addi x4,x0,0x0255
+   	sw x4,0(x2)  /*envia a leds*/
+    call delay
+
+	jal x0,ini
+    
+delay:
+		lui x5,1000
+tec:    sub x5, x5,x7
+    	beq x5,x0,salir
+		jal x0,tec
+salir:	ret
+00100393
+4aa00213
+10000137
+00412023
+014000ef
+25500213
+00412023
+008000ef
+fe1ff06f
+003e82b7
+407282b3
+00028463
+ff9ff06f
+00008067
+
+
+//envia al SPI 4 tramas y verifica el status
+//y contador para el barrido
+ini: addi x2,x0,1
+    addi x10, x0,0 /*contador*/
+     
+    lui x3,0xAAAAA   /*dato parte alta*/
+    addi x3,x3,0x2AA /*dato parte baja*/
+    lui x4,0x20000   /*dir SPI*/
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+    lui x5,0x10000
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+l1: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l1
+    call delay
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+    addi x10,x10,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+l2: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l2
+    call delay
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+    addi x10,x10,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+l3: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l3
+    call delay
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+    addi x10,x10,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+l4: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l4
+    call delay
+
+    jal x0,ini
+
+delay:
+    addi x31,x0,50
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+00100113
+00000513
+aaaaa1b7
+2aa18193
+20000237
+003220a3
+100002b7
+00a2a023
+00022303
+00137313
+fe230ce3
+05c000ef
+003220a3
+00150513
+00a2a023
+00022303
+00137313
+fe230ce3
+040000ef
+003220a3
+00150513
+00a2a023
+00022303
+00137313
+fe230ce3
+024000ef
+003220a3
+00150513
+00a2a023
+00022303
+00137313
+fe230ce3
+008000ef
+f7dff06f
+03200f93
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+
+
+//mejora del progr anterior, agregando un lat en el
+//bit2 del port_out
+
+ini: addi x2,x0,1
+    addi x10, x0,0 /*contador*/
+     
+    lui x3,0xAAAAA   /*dato parte alta*/
+    addi x3,x3,0x2AA /*dato parte baja*/
+    lui x4,0x20000   /*dir SPI*/
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+    lui x5,0x10000
+
+l1: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l1
+    
+    addi x11,x0,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+    addi x11,x0,0  /*agrego LAT=0 en el bit 2*/
+    sw x11,0(x5)  
+    addi x10,x10,0
+    sw x10,0(x5)  /*envia contador al port_out*/
+    call delay
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l2: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l2
+
+    addi x11,x0,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+    addi x11,x0,0  /*agrego LAT=0 en el bit 2*/
+    sw x11,0(x5)  
+    addi x10,x10,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+    call delay
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l3: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l3
+
+    addi x11,x0,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+    addi x11,x0,0  /*agrego LAT=0 en el bit 2*/
+    sw x11,0(x5)  
+    addi x10,x10,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+    call delay
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l4: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l4
+    addi x11,x0,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+    addi x11,x0,0  /*agrego LAT=0 en el bit 2*/
+    sw x11,0(x5)  
+    addi x10,x10,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+    call delay
+
+    jal x0,ini
+
+delay:
+    addi x31,x0,50
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+00100113
+00000513
+aaaaa1b7
+2aa18193
+20000237
+003220a3
+100002b7
+00022303
+00137313
+fe230ce3
+00400593
+00b2a023
+00000593
+00b2a023
+00050513
+00a2a023
+08c000ef
+003220a3
+00022303
+00137313
+fe230ce3
+00400593
+00b2a023
+00000593
+00b2a023
+00150513
+00a2a023
+060000ef
+003220a3
+00022303
+00137313
+fe230ce3
+00400593
+00b2a023
+00000593
+00b2a023
+00150513
+00a2a023
+034000ef
+003220a3
+00022303
+00137313
+fe230ce3
+00400593
+00b2a023
+00000593
+00b2a023
+00150513
+00a2a023
+008000ef
+f39ff06f
+03200f93
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+
+// agregaremos otra mejora, el PWM del OE en el
+// bit3  funcion OK el p10 con puras AAAAAAAA invertidos
+ini: addi x2,x0,1
+    addi x10, x0,3 /*contador*/
+     
+    lui x3,0xAAAAB   /*dato parte alta*/
+    addi x3,x3,-1366 /*dato parte baja*/
+
+    lui x4,0x20000   /*dir SPI*/
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+    lui x5,0x10000  /*dir port_out*/
+
+l1: lw x6,0(x4)/*leer el estado del spi*/
+    andi x6,x6,1
+    beq x6,x2,l1
+    
+    ori x11,x10,4  /100*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,0
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*1000agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l2: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l2
+
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,-1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l3: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l3
+
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,-1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l4: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l4
+
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,-1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+    jal x0,ini
+
+delay:
+    addi x31,x0,50
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+00100113
+00300513
+aaaab1b7
+aaa18193
+20000237
+003220a3
+100002b7
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+00050513
+00a2a023
+00856593
+00b2a023
+0ac000ef
+00056593
+00b2a023
+003220a3
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+fff50513
+00a2a023
+00856593
+00b2a023
+078000ef
+00056593
+00b2a023
+003220a3
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+fff50513
+00a2a023
+00856593
+00b2a023
+044000ef
+00056593
+00b2a023
+003220a3
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+fff50513
+00a2a023
+00856593
+00b2a023
+010000ef
+00056593
+00b2a023
+f19ff06f
+03200f93
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+
+
+
+//programa funcionando en P10 mostrando
+//ram[0],ram[1],ram[2],ram[3]
+ini: addi x2,x0,1
+    addi x10, x0,3 /*contador*/
+
+/* RAM[0]*/
+
+	lui x7,0x30000
+	addi x7,x7,0 /*dir de la RAM*/
+    lw x3,0(x7)
+/*	lui x3,0xAAAAB   /*dato parte alta*/
+/*    addi x3,x3,-1366 /*dato parte baja*/
+    lui x4,0x20000   /*dir SPI*/
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+    lui x5,0x10000  /*dir port_out*/
+
+l1: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l1
+    
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,0
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+/* RAM[4]*/
+
+	lui x7,0x30000
+	addi x7,x7,4 /*dir de la RAM*/
+    lw x3,0(x7)
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l2: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l2
+
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,-1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+/* RAM[8]*/
+	lui x7,0x30000
+	addi x7,x7,8 /*dir de la RAM*/
+    lw x3,0(x7)
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l3: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l3
+
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,-1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+/* RAM[12]*/
+
+	lui x7,0x30000
+	addi x7,x7,12 /*dir de la RAM*/
+    lw x3,0(x7)
+
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+
+l4: lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,l4
+
+    ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+
+    addi x10,x10,-1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    sw x11,0(x5)  
+    call delay
+    ori x11,x10,0  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+
+    jal x0,ini
+
+delay:
+    addi x31,x0,50
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+00100113
+00300513
+300003b7
+00038393
+0003a183
+20000237
+003220a3
+100002b7
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+00050513
+00a2a023
+00856593
+00b2a023
+0d0000ef
+00056593
+00b2a023
+300003b7
+00438393
+0003a183
+003220a3
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+fff50513
+00a2a023
+00856593
+00b2a023
+090000ef
+00056593
+00b2a023
+300003b7
+00838393
+0003a183
+003220a3
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+fff50513
+00a2a023
+00856593
+00b2a023
+050000ef
+00056593
+00b2a023
+300003b7
+00c38393
+0003a183
+003220a3
+00022303
+00137313
+fe230ce3
+00456593
+00b2a023
+fff50513
+00a2a023
+00856593
+00b2a023
+010000ef
+00056593
+00b2a023
+ef1ff06f
+03200f93
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+
+
+//programa que muestra en todo el modulo 4 digitos
+
+ini: addi x2,x0,1
+    lui x5,0x10000  /*dir port_out*/
+	lui x7,0x30000 /*DIR ram*/
+    lui x4,0x20000   /*dir SPI*/
+
+	addi x7,x7,0*4 /*dir de la RAM*/
+
+    addi x10,x0,3
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	call lat_pwm
+
+    addi x10,x0,1
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+	addi x7,x7,4 /*dir de la RAM*/
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	call lat_pwm
+
+    addi x10,x0,0
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+	addi x7,x7,8 /*dir de la RAM*/
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	call lat_pwm
+
+    addi x10,x0,2
+    sw x10,0(x5)  /*envia contador al port_out*/
+
+	addi x7,x7,12 /*dir de la RAM*/
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+    lw x3,0(x7)
+    sw x3,1(x4)      /*envia x3 al 20000001*/
+	call wait
+
+	call lat_pwm
+    jal x0,ini
+
+lat_pwm:
+	ori x11,x10,4  /*agrego LAT=1 en el bit 2*/
+    sw x11,0(x5)  
+    ori x11,x10,8  /*agrego pwm=1 en el bit 3*/
+    /*andi x11,x10,0xF7  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+delay:
+    addi x30,x0,10
+t2: addi x31,x0,2000
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir:
+	sub x30,x30,x2
+    beq x30,x0,salir2
+    jal x0,t2
+salir2:
+/*	ori x11,x10,8  /*agrego pwm=1 en el bit 3*/    
+    andi x11,x10,0xF7  /*agrego pwm=0 en el bit 3*/
+    sw x11,0(x5)  
+	ret	
+
+
+wait:
+	lw x6,0(x4)
+    andi x6,x6,1
+    beq x6,x2,wait
+	ret
+
+00100113
+100002b7
+300003b7
+20000237
+00038393
+00300513
+00a2a023
+0003a183
+003220a3
+12c000ef
+0003a183
+003220a3
+120000ef
+0003a183
+003220a3
+114000ef
+0003a183
+003220a3
+108000ef
+0c8000ef
+00100513
+00a2a023
+00438393
+0003a183
+003220a3
+0ec000ef
+0003a183
+003220a3
+0e0000ef
+0003a183
+003220a3
+0d4000ef
+0003a183
+003220a3
+0c8000ef
+088000ef
+00000513
+00a2a023
+00838393
+0003a183
+003220a3
+0ac000ef
+0003a183
+003220a3
+0a0000ef
+0003a183
+003220a3
+094000ef
+0003a183
+003220a3
+088000ef
+048000ef
+00200513
+00a2a023
+00c38393
+0003a183
+003220a3
+06c000ef
+0003a183
+003220a3
+060000ef
+0003a183
+003220a3
+054000ef
+0003a183
+003220a3
+048000ef
+008000ef
+ef1ff06f
+00456593
+00b2a023
+00856593
+00b2a023
+00a00f13
+7d000f93
+402f8fb3
+000f8463
+ff9ff06f
+402f0f33
+000f0463
+fe9ff06f
+0f757593
+00b2a023
+00008067
+00022303
+00137313
+fe230ce3
+00008067
+
+
+// lee el estado de la uart RX
+    /* Test ADDI */
+inicio: lui x3,0x10000
+        addi x4,x0,0xff
+		sw x4,0(x3)
+ini:  	lui x3, 0x50000
+  		lw x4,1(x3) /*lee estado de uart rx*/
+        andi x4,x4,1
+  		beq x4,x0,ini
+        lui x3,0x10000
+        addi x4,x0,0xfe
+        sw x4,0(x3)
+fin:    j fin
+100001b7
+0ff00213
+0041a023
+500001b7
+0011a203
+00127213
+fe020ae3
+100001b7
+0fe00213
+0041a023
+0000006f
+
+// programa contador de bytes recibidos en UART_RX
+inicio: addi x5,x0,0
+ini:  	lui x3, 0x50000
+  		lw x4,1(x3) /*lee estado de uart rx*/
+        andi x4,x4,1
+  		beq x4,x0,ini
+
+        lui x3,0x10000
+        addi x5,x5,1
+        sw x5,0(x3)
+fin:    j ini
+00000293
+500001b7
+0011a203
+00127213
+fe020ae3
+100001b7
+00128293
+0051a023
+fe5ff06f
+
+// prueba actual tranmision UART _TX
+// funciona al reiciniar con el botón
+ini:
+	lui x5,0x50000
+    addi x4,x0,0x041 /*letra A*/
+    sw x4,0(x5)
+fin:	j fin    
+500002b7
+04100213
+0042a023
+0000006f
+
+// falta probar la señal "estado"
+
+
+// prog para leer uart_rx , +1 y regresarlo uart_tx
+
+
+
+
+// leer 8 bits del puerto 0x40000 y mostrarlo en
+//leds en el puerto 0x10000
+
+ini: lui x2,0x40000 /*Dirección del puerto IN*/
+     lw x3,0(x2) /*leemos el puerto 0x40000*/
+     andi x3,x3,0x0FF /*limpia bits del 31 al 8*/
+
+     lui x2,0x10000 /*dirección del puerto OUT*/
+     sw x3,0(x2) /*escribe el dato leido en leds*/
+
+     j ini
+
+
+
+
+
+
+
+//còdigo optimizado para desplegar el "cero"
+// en 1/4 del p10 32x16
+inicio: 
+	addi x2,x0,1
+   	addi x10, x0,3 /*contador*/
+
+ini:	lui x7,0x30000
+	call mult
+	add x7,x7,x20 /*dir de la RAM 30000+x20*/
+    	lw x3,0(x7)
+
+	lui x7,0x20000
+    	sw x3,1(x7)      /*envia x3 al SPI*/
+
+l4: lw x3,0(x7)
+    andi x3,x3,1
+    beq x3,x2,l4
+
+    lui x7,0x10000/*puerto paralelo*/
+    ori x11,x10,4 
+    sw x11,0(x7)  /*LAT=1*/
+    sw x10,0(x7)  /*LAT=0*/
+
+    ori x11,x10,8  /*oe=1*/
+    sw x11,0(x7)  
+    call delay
+    sw x10,0(x7)  /*oe=0*/    
+
+    addi x14,x0,-1
+    addi x10,x10,-1
+    beq x10,x14,inicio
+    jal x0,ini
+
+
+delay:
+    addi x31,x0,50
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+
+
+mult:/*entra el valor a multiplicar por 4*/
+	addi x20,x0,0
+	addi x30,x0,4
+m1:	add x20,x20,x10/*entra x10 sale x20*/
+	addi x30,x30,-1
+	beq x30,x0,m2
+	j m1
+m2:	ret
+
+00100113
+00300513
+300003b7
+064000ef
+014383b3
+0003a183
+200003b7
+0033a0a3
+0003a183
+0011f193
+fe218ce3
+100003b7
+00456593
+00b3a023
+00a3a023
+00856593
+00b3a023
+018000ef
+00a3a023
+fff00713
+fff50513
+fae506e3
+fb1ff06f
+03200f93
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+00000a13
+00400f13
+00aa0a33
+ffff0f13
+000f0463
+ff5ff06f
+00008067
+
+
+
+//código para desplegar en todo el modulo
+inicio: 
+	addi x2,x0,1
+   	addi x10, x0,3 /*contador*/
+
+ini:lui x4,0x30000
+	call mult
+	add x4,x4,x20 /*dir de la RAM 30000+x20*/
+    lw x3,0(x4)
+	call env_spi
+    lw x3,16(x4)
+	call env_spi
+    lw x3,32(x4)
+	call env_spi
+    lw x3,48(x4)
+	call env_spi
+
+
+	lui x7,0x10000/*puerto paralelo*/
+    ori x11,x10,4 
+    sw x11,0(x7)  /*LAT=1*/
+    sw x10,0(x7)  /*LAT=0*/
+
+    ori x11,x10,8  /*oe=1*/
+    sw x11,0(x7)  
+    call delay
+    sw x10,0(x7)  /*oe=0*/    
+
+    addi x14,x0,-1
+    addi x10,x10,-1
+    beq x10,x14,inicio
+    jal x0,ini
+
+
+env_spi:
+	lui x7,0x20000
+    sw x3,1(x7)      /*envia x3 al SPI*/
+l4: lw x3,0(x7)
+    andi x3,x3,1
+    beq x3,x2,l4
+	ret
+
+
+delay:
+    addi x31,x0,50
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+
+
+mult:/*entra el valor a multiplicar por 4*/
+	addi x20,x0,0
+	addi x30,x0,4
+m1:	add x20,x20,x10/*entra x10 sale x20*/
+	addi x30,x30,-1
+	beq x30,x0,m2
+	j m1
+m2:	ret
+00100113
+00300513
+30000237
+084000ef
+01420233
+00022183
+04c000ef
+01022183
+044000ef
+02022183
+03c000ef
+03022183
+034000ef
+100003b7
+00456593
+00b3a023
+00a3a023
+00856593
+00b3a023
+030000ef
+00a3a023
+fff00713
+fff50513
+fae502e3
+fa9ff06f
+200003b7
+0033a0a3
+0003a183
+0011f193
+fe218ce3
+00008067
+03200f93
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+00000a13
+00400f13
+00aa0a33
+ffff0f13
+000f0463
+ff5ff06f
+00008067
+
+
+//animacion de gatito bailando desplazándose
+boot:
+	addi x16,x0,0
+
+start:
+	addi x15,x0,1000 /*num de barrido*/
+inicio: 
+	addi x2,x0,1
+   	addi x10, x0,3 /*contador*/
+
+ini:lui x4,0x30000
+	call mult
+    add x20,x20,x16
+	add x4,x4,x20 /*dir de la RAM 30000+x20*/
+    lw x3,0(x4)
+	call env_spi
+    lw x3,16(x4)
+	call env_spi
+    lw x3,32(x4)
+	call env_spi
+    lw x3,48(x4)
+	call env_spi
+
+
+	lui x7,0x10000/*puerto paralelo*/
+    ori x11,x10,4 
+    sw x11,0(x7)  /*LAT=1*/
+    sw x10,0(x7)  /*LAT=0*/
+
+    ori x11,x10,8  /*oe=1*/
+    sw x11,0(x7)  
+    addi x31,x0,5 /*tiempo delay*/
+    call delay
+    sw x10,0(x7)  /*oe=0*/    
+    addi x31,x0,95 /*tiempo delay*/
+    call delay
+
+    addi x14,x0,-1
+    addi x10,x10,-1
+    beq x10,x14,sal2
+    jal x0,ini
+sal2:
+	addi x15,x15,-1
+    beq x15,x0,fin
+    j inicio
+fin: add x17,x0,64
+	add x16,x16,x17
+    add x17,x0,1024
+    beq x16,x17, boot
+    j start
+
+env_spi:
+	lui x7,0x20000
+    sw x3,1(x7)      /*envia x3 al SPI*/
+l4: lw x3,0(x7)
+    andi x3,x3,1
+    beq x3,x2,l4
+	ret
+
+
+delay:
+t1: sub x31,x31,x2
+    beq x31,x0,salir
+    jal x0,t1
+salir: ret
+
+
+mult:/*entra el valor a multiplicar por 4*/
+	addi x20,x0,0
+	addi x30,x0,4
+m1:	add x20,x20,x10/*entra x10 sale x20*/
+	addi x30,x30,-1
+	beq x30,x0,m2
+	j m1
+m2:	ret
+//
+00000813
+3e800793
+00100113
+00300513
+30000237
+0b0000ef
+010a0a33
+01420233
+00022183
+078000ef
+01022183
+070000ef
+02022183
+068000ef
+03022183
+060000ef
+100003b7
+00456593
+00b3a023
+00a3a023
+00856593
+00b3a023
+00500f93
+058000ef
+00a3a023
+05f00f93
+04c000ef
+fff00713
+fff50513
+00e50463
+f99ff06f
+fff78793
+00078463
+f85ff06f
+04000893
+01180833
+40000893
+f71806e3
+f6dff06f
+200003b7
+0033a0a3
+0003a183
+0011f193
+fe218ce3
+00008067
+402f8fb3
+000f8463
+ff9ff06f
+00008067
+00000a13
+00400f13
+00aa0a33
+ffff0f13
+000f0463
+ff5ff06f
+00008067
+
+/* Lectura de datos desde los switches y mostrarlos en los leds */
+
+
+ini:
+	lui x2,0x40000
+    lui x3,0x10000
+    
+loop:
+	lw x9,0(x2)
+    sw x9,0(x3)
+    jal x0,loop
+
+40000137
+100001b7
+00012483
+0091a023
+ff9ff06f
+

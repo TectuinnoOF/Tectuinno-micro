@@ -1,0 +1,207 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Lite</Mode>
+    <AoCore_Lite index="0" sample_clock="clk" trig_type="0" capture_amount="2048" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
+        <SignalList>
+            <Bus capture_enable="true" name="cs[15:0]">
+                <Signal>cs[15]</Signal>
+                <Signal>cs[14]</Signal>
+                <Signal>cs[13]</Signal>
+                <Signal>cs[12]</Signal>
+                <Signal>cs[11]</Signal>
+                <Signal>cs[10]</Signal>
+                <Signal>cs[9]</Signal>
+                <Signal>cs[8]</Signal>
+                <Signal>cs[7]</Signal>
+                <Signal>cs[6]</Signal>
+                <Signal>cs[5]</Signal>
+                <Signal>cs[4]</Signal>
+                <Signal>cs[3]</Signal>
+                <Signal>cs[2]</Signal>
+                <Signal>cs[1]</Signal>
+                <Signal>cs[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="WriteData[31:0]">
+                <Signal>WriteData[31]</Signal>
+                <Signal>WriteData[30]</Signal>
+                <Signal>WriteData[29]</Signal>
+                <Signal>WriteData[28]</Signal>
+                <Signal>WriteData[27]</Signal>
+                <Signal>WriteData[26]</Signal>
+                <Signal>WriteData[25]</Signal>
+                <Signal>WriteData[24]</Signal>
+                <Signal>WriteData[23]</Signal>
+                <Signal>WriteData[22]</Signal>
+                <Signal>WriteData[21]</Signal>
+                <Signal>WriteData[20]</Signal>
+                <Signal>WriteData[19]</Signal>
+                <Signal>WriteData[18]</Signal>
+                <Signal>WriteData[17]</Signal>
+                <Signal>WriteData[16]</Signal>
+                <Signal>WriteData[15]</Signal>
+                <Signal>WriteData[14]</Signal>
+                <Signal>WriteData[13]</Signal>
+                <Signal>WriteData[12]</Signal>
+                <Signal>WriteData[11]</Signal>
+                <Signal>WriteData[10]</Signal>
+                <Signal>WriteData[9]</Signal>
+                <Signal>WriteData[8]</Signal>
+                <Signal>WriteData[7]</Signal>
+                <Signal>WriteData[6]</Signal>
+                <Signal>WriteData[5]</Signal>
+                <Signal>WriteData[4]</Signal>
+                <Signal>WriteData[3]</Signal>
+                <Signal>WriteData[2]</Signal>
+                <Signal>WriteData[1]</Signal>
+                <Signal>WriteData[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">MemWrite</Signal>
+            <Bus capture_enable="true" name="PC[31:0]">
+                <Signal>PC[31]</Signal>
+                <Signal>PC[30]</Signal>
+                <Signal>PC[29]</Signal>
+                <Signal>PC[28]</Signal>
+                <Signal>PC[27]</Signal>
+                <Signal>PC[26]</Signal>
+                <Signal>PC[25]</Signal>
+                <Signal>PC[24]</Signal>
+                <Signal>PC[23]</Signal>
+                <Signal>PC[22]</Signal>
+                <Signal>PC[21]</Signal>
+                <Signal>PC[20]</Signal>
+                <Signal>PC[19]</Signal>
+                <Signal>PC[18]</Signal>
+                <Signal>PC[17]</Signal>
+                <Signal>PC[16]</Signal>
+                <Signal>PC[15]</Signal>
+                <Signal>PC[14]</Signal>
+                <Signal>PC[13]</Signal>
+                <Signal>PC[12]</Signal>
+                <Signal>PC[11]</Signal>
+                <Signal>PC[10]</Signal>
+                <Signal>PC[9]</Signal>
+                <Signal>PC[8]</Signal>
+                <Signal>PC[7]</Signal>
+                <Signal>PC[6]</Signal>
+                <Signal>PC[5]</Signal>
+                <Signal>PC[4]</Signal>
+                <Signal>PC[3]</Signal>
+                <Signal>PC[2]</Signal>
+                <Signal>PC[1]</Signal>
+                <Signal>PC[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">spi_0/transmitting</Signal>
+            <Bus capture_enable="true" name="spi_0/bit_count[4:0]">
+                <Signal>spi_0/bit_count[4]</Signal>
+                <Signal>spi_0/bit_count[3]</Signal>
+                <Signal>spi_0/bit_count[2]</Signal>
+                <Signal>spi_0/bit_count[1]</Signal>
+                <Signal>spi_0/bit_count[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="ReadData[31:0]">
+                <Signal>ReadData[31]</Signal>
+                <Signal>ReadData[30]</Signal>
+                <Signal>ReadData[29]</Signal>
+                <Signal>ReadData[28]</Signal>
+                <Signal>ReadData[27]</Signal>
+                <Signal>ReadData[26]</Signal>
+                <Signal>ReadData[25]</Signal>
+                <Signal>ReadData[24]</Signal>
+                <Signal>ReadData[23]</Signal>
+                <Signal>ReadData[22]</Signal>
+                <Signal>ReadData[21]</Signal>
+                <Signal>ReadData[20]</Signal>
+                <Signal>ReadData[19]</Signal>
+                <Signal>ReadData[18]</Signal>
+                <Signal>ReadData[17]</Signal>
+                <Signal>ReadData[16]</Signal>
+                <Signal>ReadData[15]</Signal>
+                <Signal>ReadData[14]</Signal>
+                <Signal>ReadData[13]</Signal>
+                <Signal>ReadData[12]</Signal>
+                <Signal>ReadData[11]</Signal>
+                <Signal>ReadData[10]</Signal>
+                <Signal>ReadData[9]</Signal>
+                <Signal>ReadData[8]</Signal>
+                <Signal>ReadData[7]</Signal>
+                <Signal>ReadData[6]</Signal>
+                <Signal>ReadData[5]</Signal>
+                <Signal>ReadData[4]</Signal>
+                <Signal>ReadData[3]</Signal>
+                <Signal>ReadData[2]</Signal>
+                <Signal>ReadData[1]</Signal>
+                <Signal>ReadData[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">clk_spi</Signal>
+            <Signal capture_enable="true">tx_spi</Signal>
+            <Bus capture_enable="true" name="spi_0/cont[7:0]">
+                <Signal>spi_0/cont[7]</Signal>
+                <Signal>spi_0/cont[6]</Signal>
+                <Signal>spi_0/cont[5]</Signal>
+                <Signal>spi_0/cont[4]</Signal>
+                <Signal>spi_0/cont[3]</Signal>
+                <Signal>spi_0/cont[2]</Signal>
+                <Signal>spi_0/cont[1]</Signal>
+                <Signal>spi_0/cont[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="port_out[7:0]">
+                <Signal>port_out[7]</Signal>
+                <Signal>port_out[6]</Signal>
+                <Signal>port_out[5]</Signal>
+                <Signal>port_out[4]</Signal>
+                <Signal>port_out[3]</Signal>
+                <Signal>port_out[2]</Signal>
+                <Signal>port_out[1]</Signal>
+                <Signal>port_out[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="ur0/rx_data[7:0]">
+                <Signal>ur0/rx_data[7]</Signal>
+                <Signal>ur0/rx_data[6]</Signal>
+                <Signal>ur0/rx_data[5]</Signal>
+                <Signal>ur0/rx_data[4]</Signal>
+                <Signal>ur0/rx_data[3]</Signal>
+                <Signal>ur0/rx_data[2]</Signal>
+                <Signal>ur0/rx_data[1]</Signal>
+                <Signal>ur0/rx_data[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">ur0/rx_data_valid</Signal>
+            <Signal capture_enable="true">ur0/busy</Signal>
+            <Bus capture_enable="true" name="reg_lec1/dat_reg[31:0]">
+                <Signal>reg_lec1/dat_reg[31]</Signal>
+                <Signal>reg_lec1/dat_reg[30]</Signal>
+                <Signal>reg_lec1/dat_reg[29]</Signal>
+                <Signal>reg_lec1/dat_reg[28]</Signal>
+                <Signal>reg_lec1/dat_reg[27]</Signal>
+                <Signal>reg_lec1/dat_reg[26]</Signal>
+                <Signal>reg_lec1/dat_reg[25]</Signal>
+                <Signal>reg_lec1/dat_reg[24]</Signal>
+                <Signal>reg_lec1/dat_reg[23]</Signal>
+                <Signal>reg_lec1/dat_reg[22]</Signal>
+                <Signal>reg_lec1/dat_reg[21]</Signal>
+                <Signal>reg_lec1/dat_reg[20]</Signal>
+                <Signal>reg_lec1/dat_reg[19]</Signal>
+                <Signal>reg_lec1/dat_reg[18]</Signal>
+                <Signal>reg_lec1/dat_reg[17]</Signal>
+                <Signal>reg_lec1/dat_reg[16]</Signal>
+                <Signal>reg_lec1/dat_reg[15]</Signal>
+                <Signal>reg_lec1/dat_reg[14]</Signal>
+                <Signal>reg_lec1/dat_reg[13]</Signal>
+                <Signal>reg_lec1/dat_reg[12]</Signal>
+                <Signal>reg_lec1/dat_reg[11]</Signal>
+                <Signal>reg_lec1/dat_reg[10]</Signal>
+                <Signal>reg_lec1/dat_reg[9]</Signal>
+                <Signal>reg_lec1/dat_reg[8]</Signal>
+                <Signal>reg_lec1/dat_reg[7]</Signal>
+                <Signal>reg_lec1/dat_reg[6]</Signal>
+                <Signal>reg_lec1/dat_reg[5]</Signal>
+                <Signal>reg_lec1/dat_reg[4]</Signal>
+                <Signal>reg_lec1/dat_reg[3]</Signal>
+                <Signal>reg_lec1/dat_reg[2]</Signal>
+                <Signal>reg_lec1/dat_reg[1]</Signal>
+                <Signal>reg_lec1/dat_reg[0]</Signal>
+            </Bus>
+        </SignalList>
+    </AoCore_Lite>
+    <GAO_ID>0001001011110110</GAO_ID>
+</GAO_CONFIG>

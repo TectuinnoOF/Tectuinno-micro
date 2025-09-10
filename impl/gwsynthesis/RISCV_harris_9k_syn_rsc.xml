@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top">
+    <SubModule name="gw_gao_inst_0" Register="654" Lut="488" Bsram="18"/>
+    <SubModule name="rvsingle">
+        <SubModule name="c">
+            <SubModule name="md" Lut="5"/>
+        </SubModule>
+        <SubModule name="dp">
+            <SubModule name="pcreg" Register="32" Lut="1"/>
+            <SubModule name="pcmux" Lut="76"/>
+            <SubModule name="pcmuxjalr" Lut="4"/>
+            <SubModule name="pcaddbranch" Alu="29"/>
+            <SubModule name="rf" Lut="76" Ssram="32"/>
+            <SubModule name="resultmux" Lut="62"/>
+            <SubModule name="ext" Lut="2"/>
+            <SubModule name="alu" Alu="32" Lut="82"/>
+        </SubModule>
+    </SubModule>
+    <SubModule name="imem" Lut="6"/>
+    <SubModule name="dmem" Lut="304" Ssram="128"/>
+    <SubModule name="d1" Lut="16"/>
+    <SubModule name="rl1" Register="8" Lut="1"/>
+    <SubModule name="spi_0" Register="86" Lut="119"/>
+    <SubModule name="ur0" Register="41" Alu="3" Lut="98"/>
+    <SubModule name="ut0" Register="34" Alu="3" Lut="58"/>
+</Module>
