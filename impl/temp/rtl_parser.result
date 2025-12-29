@@ -1,0 +1,284 @@
+[
+ {
+  "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+  "InstLine" : 8,
+  "InstName" : "top",
+  "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+  "ModuleLine" : 8,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 29,
+    "InstName" : "rvsingle",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/micro_RISC.sv",
+    "ModuleLine" : 1,
+    "ModuleName" : "riscvsingle",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/micro_RISC.sv",
+      "InstLine" : 13,
+      "InstName" : "c",
+      "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/controller.sv",
+      "ModuleLine" : 1,
+      "ModuleName" : "controller",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/controller.sv",
+        "InstLine" : 15,
+        "InstName" : "md",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/controller.sv",
+        "ModuleLine" : 23,
+        "ModuleName" : "maindec"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/controller.sv",
+        "InstLine" : 17,
+        "InstName" : "ad",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/controller.sv",
+        "ModuleLine" : 48,
+        "ModuleName" : "aludec"
+       }
+      ]
+     },
+     {
+      "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/micro_RISC.sv",
+      "InstLine" : 14,
+      "InstName" : "dp",
+      "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+      "ModuleLine" : 1,
+      "ModuleName" : "datapath",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 17,
+        "InstName" : "pcreg",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 46,
+        "ModuleName" : "flopr"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 18,
+        "InstName" : "pcmux",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 92,
+        "ModuleName" : "mux2"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 19,
+        "InstName" : "pcmuxjalr",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 92,
+        "ModuleName" : "mux2"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 22,
+        "InstName" : "pcadd4",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 56,
+        "ModuleName" : "adder"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 25,
+        "InstName" : "pcaddbranch",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 56,
+        "ModuleName" : "adder"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 29,
+        "InstName" : "rf",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 108,
+        "ModuleName" : "regfile"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 32,
+        "InstName" : "resultmux",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 99,
+        "ModuleName" : "mux3"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 35,
+        "InstName" : "ext",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 61,
+        "ModuleName" : "extend"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 38,
+        "InstName" : "srcbmux",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 92,
+        "ModuleName" : "mux2"
+       },
+       {
+        "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "InstLine" : 39,
+        "InstName" : "alu",
+        "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+        "ModuleLine" : 125,
+        "ModuleName" : "alu"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 31,
+    "InstName" : "imem",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/mems.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "imem"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 35,
+    "InstName" : "dmem",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/mems.sv",
+    "ModuleLine" : 83,
+    "ModuleName" : "dmem"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 38,
+    "InstName" : "d1",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "ModuleLine" : 78,
+    "ModuleName" : "decod_4_16"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 43,
+    "InstName" : "rl1",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "reg_led"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 45,
+    "InstName" : "rl2",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "reg_led"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 47,
+    "InstName" : "rl3",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "reg_led"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 49,
+    "InstName" : "rl4",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "reg_led"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 51,
+    "InstName" : "rl5",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "reg_led"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 53,
+    "InstName" : "rl6",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "reg_led"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 57,
+    "InstName" : "reg_lec1",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+    "ModuleLine" : 13,
+    "ModuleName" : "reg_in"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 60,
+    "InstName" : "spi_0",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_SPI.sv",
+    "ModuleLine" : 2,
+    "ModuleName" : "SPI"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 63,
+    "InstName" : "ur0",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_rx_tx.v",
+    "ModuleLine" : 5,
+    "ModuleName" : "uart_rx"
+   },
+   {
+    "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+    "InstLine" : 72,
+    "InstName" : "ur1",
+    "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_imem.sv",
+    "ModuleLine" : 3,
+    "ModuleName" : "uart_rx_wtr",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_imem.sv",
+      "InstLine" : 14,
+      "InstName" : "urx1",
+      "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_imem.sv",
+      "ModuleLine" : 167,
+      "ModuleName" : "uart_rx2"
+     },
+     {
+      "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_imem.sv",
+      "InstLine" : 18,
+      "InstName" : "ut1",
+      "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_imem.sv",
+      "ModuleLine" : 224,
+      "ModuleName" : "uart_tx2"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+  "InstLine" : 83,
+  "InstName" : "flopenr",
+  "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+  "ModuleLine" : 83,
+  "ModuleName" : "flopenr"
+ },
+ {
+  "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/mems.sv",
+  "InstLine" : 382,
+  "InstName" : "rom_32X16_uu",
+  "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/mems.sv",
+  "ModuleLine" : 382,
+  "ModuleName" : "rom_32X16_uu"
+ },
+ {
+  "InstFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_rx_tx.v",
+  "InstLine" : 176,
+  "InstName" : "uart_tx",
+  "ModuleFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_rx_tx.v",
+  "ModuleLine" : 176,
+  "ModuleName" : "uart_tx"
+ }
+]

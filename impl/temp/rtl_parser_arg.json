@@ -1,0 +1,49 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/RISC_V.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/controller.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/datapath.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/mems.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/micro_RISC.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_SPI.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/peri_reg_led.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_imem.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/src/uart_rx_tx.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "C:/users/pablo-g/Documents/git-projects/Tectuinno-micro/Tectuinno_v5/RISCV_harris_9k/impl/temp/rtl_parser.result",
+ "Top" : "top",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_93"
+}
