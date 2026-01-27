@@ -28,15 +28,23 @@ Tectuinno‑micro es la implementación monociclo del microcontrolador RISC‑V 
 
 ## Mapeo de periféricos
 
-|    Base (hex) | Función                                             |
-| ------------: | --------------------------------------------------- |
-| `0x1000_0000` | `reg_led` — `port_out[7:0]` (write)                 |
-| `0x2000_0000` | `SPI` — offsets: `+0` status, `+1` shift, `+2` freq |
-| `0x3000_0000` | `DMEM` — Data memory (read/write)                   |
-| `0x4000_0000` | `reg_in` — `port_in[7:0]` (read)                    |
-| `0x0005_0000` | `UART` — `uart_rx` / `uart_tx` (byte lanes)         |
+| Dirección     | Nombre                    |Uso                                                              |
+| ------------: | --------------------------|-----------------------------------------------------------------|
+| `0x1000_0000` | reg_led rl1 (p10)         |Permite enviar datos a los pines de un p10                       |
+| `0x2000_0000` | SPI spi_0 (STATUS)        |Indica el estado del periférico                                  |
+| `0x2000_0001` | SPI spi_0 (SHIFT)         |Envía y recibe datos a través del módulo                         |
+| `0x2000_0002` | SPI spi_0 (FREQ)          |Ajusta la velocidad de comunicación                              |
+| `0x3000_0000` | dmem dmem(RAM de datos)   |Guarda variables y datos del programa                            |
+| `0x4000_0000` | reg_in reg_lec1 (entradas)|Accede a la lectura de datos a partir de botones, switches, etc  |
+| `0x5000_0000` | uart_rx ur0 (UART RX)     |Corresponde al buffer de recepción del módulo UART               |
+| `0x6000_0000` | reg_led rl2(semáforo)     |Registro especializado para manejar señales luminosas            |
+| `0x7000_0000` | reg_led rl3 (m_cd)        |Instancia que permite controlar un motor de corriente directa    |
+| `0x8000_0000` | reg_led rl4 (m_pasos)     |Concede operar un motor a pasos                                  |
+| `0x9000_0000` | reg_led rl5 (m_servo)     |Controla un servo motor                                          |
+| `0xA000_0000` | reg_led rl6 (fpga_leds)   |Activa los leds internos del Tang Nano 9K FPGA                   |
 
 > El decodificador `decod_4_16` toma `DataAdr[31:28]` y genera la señal `cs` de selección de periféricos en `top.sv`.
+> Los bits bajos `DataAdr[1:0]` se utilizan dentro de cada periférico para acceder a sus subregistros, diferenciando la función específica que se desea ejecutar (por ejemplo, STATUS, SHIFT o FREQ en el SPI).
 
 ---
 
