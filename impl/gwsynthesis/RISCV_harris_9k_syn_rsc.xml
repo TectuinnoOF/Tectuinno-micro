@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <Module name="top" T_Register="1461(0)" T_Alu="86(0)" T_Lut="2279(0)" T_Ssram="270(0)">
  <SubModule name="rvsingle" T_Register="1056(0)" T_Alu="64(0)" T_Lut="1152(0)" T_Ssram="16(0)">
@@ -28,3 +29,31 @@
   <SubModule name="ut1" Register="27" Alu="9" Lut="29" T_Register="27(27)" T_Alu="9(9)" T_Lut="29(29)"/>
  </SubModule>
 </Module>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" T_Register="1452(0)" T_Alu="86(0)" T_Lut="2251(0)" T_Ssram="270(0)">
+    <SubModule name="rvsingle" T_Register="1056(0)" T_Alu="64(0)" T_Lut="1124(0)" T_Ssram="16(0)">
+        <SubModule name="c" T_Lut="8(0)">
+            <SubModule name="ad" Lut="8" T_Lut="8(8)"/>
+        </SubModule>
+        <SubModule name="dp" T_Register="1056(0)" T_Alu="64(0)" T_Lut="1116(0)" T_Ssram="16(0)">
+            <SubModule name="pcreg" Register="32" Lut="121" T_Register="32(32)" T_Lut="121(121)"/>
+            <SubModule name="pcmux" Lut="4" T_Lut="4(4)"/>
+            <SubModule name="pcaddbranch" Alu="32" T_Alu="32(32)"/>
+            <SubModule name="rf" Register="1024" Lut="628" Ssram="16" T_Register="1024(1024)" T_Lut="628(628)" T_Ssram="16(16)"/>
+            <SubModule name="resultmux" Lut="213" T_Lut="213(213)"/>
+            <SubModule name="ext" Lut="41" T_Lut="41(41)"/>
+            <SubModule name="alu" Alu="32" Lut="109" T_Alu="32(32)" T_Lut="109(109)"/>
+        </SubModule>
+    </SubModule>
+    <SubModule name="imem" Register="42" Alu="13" Lut="399" Ssram="128" T_Register="42(42)" T_Alu="13(13)" T_Lut="399(399)" T_Ssram="128(128)"/>
+    <SubModule name="dmem" Register="128" Lut="343" Ssram="126" T_Register="128(128)" T_Lut="343(343)" T_Ssram="126(126)"/>
+    <SubModule name="rl1" Register="4" Lut="10" T_Register="4(4)" T_Lut="10(10)"/>
+    <SubModule name="rl2" Register="5" Lut="6" T_Register="5(5)" T_Lut="6(6)"/>
+    <SubModule name="spi_0" Register="86" Lut="129" T_Register="86(86)" T_Lut="129(129)"/>
+    <SubModule name="ur1" Register="71" Lut="169" T_Register="131(71)" T_Alu="9(0)" T_Lut="240(169)">
+        <SubModule name="urx1" Register="33" Lut="42" T_Register="33(33)" T_Lut="42(42)"/>
+        <SubModule name="ut1" Register="27" Alu="9" Lut="29" T_Register="27(27)" T_Alu="9(9)" T_Lut="29(29)"/>
+    </SubModule>
+</Module>
+>>>>>>> 23057c6 (V6 del Microprocesador de Único Ciclo)

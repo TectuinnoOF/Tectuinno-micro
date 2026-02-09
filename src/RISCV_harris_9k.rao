@@ -1,0 +1,79 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Lite</Mode>
+    <AoCore_Lite index="0" sample_clock="clk" trig_type="0" capture_amount="4096" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
+        <SignalList>
+            <Bus capture_enable="true" name="PC[31:0]">
+                <Signal>PC[31]</Signal>
+                <Signal>PC[30]</Signal>
+                <Signal>PC[29]</Signal>
+                <Signal>PC[28]</Signal>
+                <Signal>PC[27]</Signal>
+                <Signal>PC[26]</Signal>
+                <Signal>PC[25]</Signal>
+                <Signal>PC[24]</Signal>
+                <Signal>PC[23]</Signal>
+                <Signal>PC[22]</Signal>
+                <Signal>PC[21]</Signal>
+                <Signal>PC[20]</Signal>
+                <Signal>PC[19]</Signal>
+                <Signal>PC[18]</Signal>
+                <Signal>PC[17]</Signal>
+                <Signal>PC[16]</Signal>
+                <Signal>PC[15]</Signal>
+                <Signal>PC[14]</Signal>
+                <Signal>PC[13]</Signal>
+                <Signal>PC[12]</Signal>
+                <Signal>PC[11]</Signal>
+                <Signal>PC[10]</Signal>
+                <Signal>PC[9]</Signal>
+                <Signal>PC[8]</Signal>
+                <Signal>PC[7]</Signal>
+                <Signal>PC[6]</Signal>
+                <Signal>PC[5]</Signal>
+                <Signal>PC[4]</Signal>
+                <Signal>PC[3]</Signal>
+                <Signal>PC[2]</Signal>
+                <Signal>PC[1]</Signal>
+                <Signal>PC[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">rst</Signal>
+            <Bus capture_enable="true" name="Instr[31:0]">
+                <Signal>Instr[31]</Signal>
+                <Signal>Instr[30]</Signal>
+                <Signal>Instr[29]</Signal>
+                <Signal>Instr[28]</Signal>
+                <Signal>Instr[27]</Signal>
+                <Signal>Instr[26]</Signal>
+                <Signal>Instr[25]</Signal>
+                <Signal>Instr[24]</Signal>
+                <Signal>Instr[23]</Signal>
+                <Signal>Instr[22]</Signal>
+                <Signal>Instr[21]</Signal>
+                <Signal>Instr[20]</Signal>
+                <Signal>Instr[19]</Signal>
+                <Signal>Instr[18]</Signal>
+                <Signal>Instr[17]</Signal>
+                <Signal>Instr[16]</Signal>
+                <Signal>Instr[15]</Signal>
+                <Signal>Instr[14]</Signal>
+                <Signal>Instr[13]</Signal>
+                <Signal>Instr[12]</Signal>
+                <Signal>Instr[11]</Signal>
+                <Signal>Instr[10]</Signal>
+                <Signal>Instr[9]</Signal>
+                <Signal>Instr[8]</Signal>
+                <Signal>Instr[7]</Signal>
+                <Signal>Instr[6]</Signal>
+                <Signal>Instr[5]</Signal>
+                <Signal>Instr[4]</Signal>
+                <Signal>Instr[3]</Signal>
+                <Signal>Instr[2]</Signal>
+                <Signal>Instr[1]</Signal>
+                <Signal>Instr[0]</Signal>
+            </Bus>
+        </SignalList>
+    </AoCore_Lite>
+    <GAO_ID>0010000001110111</GAO_ID>
+</GAO_CONFIG>

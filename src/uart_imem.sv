@@ -2,7 +2,8 @@
 //uart_rx_wtr ur1(reset,clk, rx_w,dato_uart, w_imem,tx_w);
 module uart_rx_wtr(input logic rst,clk,rx_w,
 output logic [7:0]dato_uart, 
-output logic w_imem,tx_w,led,res_pc);
+output logic w_imem,tx_w,led,
+input logic res_pc);
 
 
 logic [7:0]dato,dato_pre,dato_rx;

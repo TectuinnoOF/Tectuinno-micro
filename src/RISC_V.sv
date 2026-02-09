@@ -1,6 +1,8 @@
 //versión WiFi OK  v3  tx_w=40 rx_w=35
 //(tx0=76 rx0=75)conector CN3  txpc=17 rxpc=18
 //Actualización 22 de Noviembre 2025
+//probado con usr el 6 feb2026
+//probado con la IDE de Tectuinno tanto por cable directo como wifi el 7 feb 2026
 //https://riscvasm.lucasteske.dev/  CODIFICAR ENSAMBLADOR
 //A=p10[0]37, B=p10[1]36, LAT=p10[2]25, 
 //oe=p10[3]38,
@@ -14,6 +16,16 @@ output logic [1:0]m_cd,//cs[7] a=68  b=69
 output logic [2:0]m_pasos,//cs[8] ena=70 dir=71 pul=72
 output logic m_servo,//cs[9] servo=73
 output logic [4:0]fpga_leds);//cs[10] 11,13-16 fpga_leds 0xA0000000
+/*
+0x10000 modulo led 32x16 p10
+0x60000 semáforo  bit2 rojo bit 1 ambar bit0 verde
+0x70000 motor cd (corriente directa) bit1 bit0
+0x80000 motor a pasos cs[8] ena(bit2) dir(bit1) pul(bit0)
+0x90000 servomotor bit0
+0xa0000 fpga_leds
+*/
+//puente para leer lo que recibe el WiFi
+assign tx_17=rx_w;
 
 logic [7:0]dato_uart;
 

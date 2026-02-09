@@ -4,6 +4,7 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
+<<<<<<< HEAD
         <File path="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\RISC_V.sv" type="verilog"/>
         <File path="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\controller.sv" type="verilog"/>
         <File path="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\datapath.sv" type="verilog"/>
@@ -13,16 +14,35 @@
         <File path="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\peri_reg_led.sv" type="verilog"/>
         <File path="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\uart_imem.sv" type="verilog"/>
         <File path="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\uart_rx_tx.v" type="verilog"/>
+=======
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\micro_RISC.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_SPI.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_reg_led.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv" type="verilog"/>
+        <File path="C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_rx_tx.v" type="verilog"/>
+>>>>>>> 23057c6 (V6 del Microprocesador de Único Ciclo)
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
         <Option type="global_freq" value="50.000"/>
         <Option type="looplimit" value="2000"/>
+<<<<<<< HEAD
         <Option type="output_file" value="C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k.vg"/>
+=======
+        <Option type="output_file" value="C:\Users\lenol\Downloads\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k.vg"/>
+>>>>>>> 23057c6 (V6 del Microprocesador de Único Ciclo)
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
         <Option type="top_module" value="top"/>
         <Option type="vcc" value="1.2"/>
+<<<<<<< HEAD
+=======
+        <Option type="vccx" value="3.3"/>
+>>>>>>> 23057c6 (V6 del Microprocesador de Único Ciclo)
         <Option type="verilog_language" value="sysv-2017"/>
         <Option type="vhdl_language" value="vhdl-1993"/>
     </OptionList>

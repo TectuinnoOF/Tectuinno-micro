@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\src\RISC_V.sv'
@@ -130,3 +131,136 @@ WARN  (NL0002) : The module "uart_rx" instantiated to "ur0" is swept in optimizi
 [95%] Generate netlist file "C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k.vg" completed
 [100%] Generate report file "C:\users\pablo-g\Documents\git-projects\Tectuinno-micro\Tectuinno_v5\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k_syn.rpt.html" completed
 GowinSynthesis finish
+=======
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv'
+Undeclared symbol 'reset', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":15)
+Undeclared symbol 'res_pc', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":24)
+Undeclared symbol 'w_imem', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":26)
+WARN  (EX3638) : 'res_pc' is already implicitly declared on line 24("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":27)
+Undeclared symbol 'rx_53', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":51)
+WARN  (EX2830) : Data object 'dato_uart' is already declared("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":54)
+Previous declaration of 'dato_uart' is from here("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":13)
+WARN  (EX3671) : Second declaration of 'dato_uart' is ignored("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":54)
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv'
+WARN  (EX3792) : Literal value 'bx_xxx_x_x_xx_x_xx_x truncated to fit in 11 bits("C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv":44)
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv'
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv'
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\micro_RISC.sv'
+Undeclared symbol 'PCSrc', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\micro_RISC.sv":13)
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_SPI.sv'
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_reg_led.sv'
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv'
+Undeclared symbol 'rx_done', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":14)
+Undeclared symbol 'busy', assumed default net type 'wire'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":18)
+Analyzing Verilog file 'C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_rx_tx.v'
+WARN  (EX3682) : Variable 'ReadData' might have multiple concurrent drivers("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":48)
+WARN  (EX3073) : Port 'rx_data_valid' remains unconnected for this instance("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":51)
+WARN  (EX3682) : Variable 'res_pc' might have multiple concurrent drivers("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":56)
+Compiling module 'top'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":8)
+Compiling module 'riscvsingle'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\micro_RISC.sv":1)
+Compiling module 'controller'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv":1)
+Compiling module 'maindec'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv":23)
+Compiling module 'aludec'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv":48)
+WARN  (EX3786) : Assignment to input 'res_pc'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":17)
+Compiling module 'datapath'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":1)
+Compiling module 'flopr(WIDTH=32)'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":46)
+Compiling module 'mux2(WIDTH=32)'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":92)
+Compiling module 'adder'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":56)
+Compiling module 'regfile'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":108)
+Extracting RAM for identifier 'rf'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":114)
+Compiling module 'mux3(WIDTH=32)'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":99)
+Compiling module 'extend'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":61)
+Compiling module 'alu'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":125)
+Port is declared here("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":11)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 32 for port 'res_pc'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":24)
+Compiling module 'imem'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":2)
+Extracting RAM for identifier 'RAM'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":8)
+WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":26)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":55)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":68)
+Compiling module 'dmem'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":83)
+Extracting RAM for identifier 'RAM'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\mems.sv":87)
+Compiling module 'decod_4_16'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":62)
+Compiling module 'reg_led'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_reg_led.sv":2)
+WARN  (EX3670) : Actual bit length 4 differs from formal bit length 32 for port 'leds'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":38)
+WARN  (EX3670) : Actual bit length 5 differs from formal bit length 32 for port 'leds'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":41)
+Compiling module 'reg_in'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_reg_led.sv":13)
+WARN  (EX3670) : Actual bit length 8 differs from formal bit length 32 for port 'dat_reg'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":45)
+Compiling module 'SPI'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\peri_SPI.sv":2)
+Compiling module 'uart_rx'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_rx_tx.v":5)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_rx_tx.v":22)
+WARN  (EX3073) : Port 'led' remains unconnected for this instance("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":18)
+Compiling module 'uart_rx_wtr'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":3)
+Extracting RAM for identifier 'RAM'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":11)
+Compiling module 'uart_rx2'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":167)
+Compiling module 'uart_tx2'("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":224)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":73)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":86)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":95)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":114)
+WARN  (EX1998) : Net 'rx_53' does not have a driver("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":51)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "res_pc[31]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[30]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[29]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[28]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[27]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[26]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[25]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[24]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[23]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[22]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[21]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[20]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[19]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[18]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[17]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[16]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[15]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[14]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[13]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[12]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[11]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[10]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[9]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[8]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[7]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[6]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[5]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[4]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[3]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[2]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[1]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc[0]" of module "flopr(WIDTH=32)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":49)
+WARN  (EX0211) : The output port "res_pc" of module "uart_rx_wtr" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\uart_imem.sv":5)
+WARN  (EX0211) : The output port "tx_17" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":10)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input rx18 is unused("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":8)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "decod_4_16" instantiated to "d1" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":33)
+WARN  (NL0002) : The module "reg_in" instantiated to "reg_lec1" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":45)
+WARN  (NL0002) : The module "maindec" instantiated to "md" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\controller.sv":15)
+WARN  (NL0002) : The module "adder" instantiated to "pcadd4" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":22)
+WARN  (NL0002) : The module "mux2" instantiated to "pcmuxjalr" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":20)
+WARN  (NL0002) : The module "mux2" instantiated to "srcbmux" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\datapath.sv":38)
+WARN  (NL0002) : The module "uart_rx" instantiated to "ur0" is swept in optimizing("C:\Users\lenol\Downloads\RISCV_harris_9k\src\RISC_V.sv":51)
+[95%] Generate netlist file "C:\Users\lenol\Downloads\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k.vg" completed
+[100%] Generate report file "C:\Users\lenol\Downloads\RISCV_harris_9k\impl\gwsynthesis\RISCV_harris_9k_syn.rpt.html" completed
+GowinSynthesis finish
+>>>>>>> 23057c6 (V6 del Microprocesador de Único Ciclo)
